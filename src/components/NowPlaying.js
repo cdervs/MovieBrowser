@@ -8,7 +8,7 @@ const NowPlaying = () => {
     const [movieDetails, setMovieDetails] = useState([]); // Changed to an array to store multiple movies
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=6faaf6c16fc5c06d8fdda4d165741722&language=en-US&page=1')
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API}&language=en-US&page=1`)
             .then((res) => res.json())
             .then((data) => {
                 setMovieDetails(data.results); // Update state with the array of movies
