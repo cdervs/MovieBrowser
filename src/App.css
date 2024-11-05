@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+.hero-container{
+  position: relative;
+  z-index: 100;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-text{
+  position: relative;
+  z-index: 200;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero-backdrop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover ;
+  background-position: center center;
+  opacity: 0.5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.about{
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+/* .nav-link { */
+  /* color: var(--bs-light); */
+/*  */
+/* } */
+
+
+/* #homebtn{ */
+  /* color: var(--bs-light) !important; */
+/* } */
+
+.nav-link:not(#soon){
+  color: var(--bs-light) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link:not(#soon):hover{
+  color: var(--bs-warning) !important;
 }
+
+#searchbtn:hover {
+  color: var(--bs-dark);
+}
+
+.navbar-toggler{
+  background-color: var(--bs-warning) !important;
+}
+
+
+
+iframe{
+  display: flex;
+}
+
+.wrapper{
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.wrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper span{
+  position: absolute;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+/* @media (max-width:575px) { */
+  /* iframe{ */
+    /* width: 200ppx; */
+    /* height: auto; */
+  /* } */
+/* } */
+/*  */
+/* @media (min-width:576px) and (max-width:767px){ */
+  /* iframe{ */
+    /* width: 700px; */
+    /* height: auto; */
+  /* } */
+/* } */
+/*  */
+/* @media (min-width:768px) { */
+  /* iframe{ */
+    /* width: 768px; */
+    /* height: auto; */
+  /* } */
+/* } */
+  
+
+
