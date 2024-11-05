@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
+
+
 const NowPlaying = () => {
     const [movieDetails, setMovieDetails] = useState([]); // Changed to an array to store multiple movies
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API}&language=en-US&page=1`)
+      
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_API}&language=en-US&page=1`)
             .then((res) => res.json())
             .then((data) => {
                 setMovieDetails(data.results); // Update state with the array of movies

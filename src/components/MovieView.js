@@ -25,7 +25,8 @@ const MovieView = () => {
     setVideoId('');
 
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API}&language=en-US`
+      
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_API}&language=en-US`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -45,9 +46,9 @@ const MovieView = () => {
   useEffect(() => {
     // Fetch YouTube search results if movieDetails is loaded
     if (movieDetails && movieDetails.original_title) {
-      const API_KEY = `${process.env.YT_API}`;
+      // const API_KEY = `${process.env.REACT_APP_YT_API}`;
       const query = `${movieDetails.original_title} ${movieDetails.overview} trailer`;
-      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=5&key=${API_KEY}`;
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=5&key=${process.env.REACT_APP_YT_API}`;
 
 
       fetch(url)
@@ -102,7 +103,7 @@ const MovieView = () => {
                 />
               </div>
               <div className="col-md-9">
-                <div style={{border: "2px solid black", display: "grid", gridTemplateRows: "auto auto auto auto", gridTemplateColumns: "repeat(4, 1fr)"}}>
+                <div style={{display: "grid", gridTemplateRows: "auto auto auto auto", gridTemplateColumns: "repeat(4, 1fr)"}}>
                     <h2
                     style={{gridColumnStart: "1", gridColumnEnd: "2"}}
                     >
